@@ -1,0 +1,1 @@
+This is a sample file from the host machine's data directory. If you can read this through the endpoint, the bind mount is working correctly!
