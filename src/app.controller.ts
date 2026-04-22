@@ -19,4 +19,9 @@ export class AppController {
   getBindMountFileContent(@Param('filename') filename: string): string {
     return this.appService.getBindMountFileContent(filename);
   }
+
+  @Get('single-file')
+  getSingleFile(): string {
+    return this.appService.getSingleFile();
+  }
 }

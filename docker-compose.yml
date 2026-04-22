@@ -8,6 +8,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./data:/app/data
+      - ./data/test.txt:/app/data/test.txt # Bind mount for a single file
+      - ./single-file.txt:/app/single-file.txt # Another single file bind mount
     environment:
       - NODE_ENV=production

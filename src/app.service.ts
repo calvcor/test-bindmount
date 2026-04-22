@@ -33,4 +33,17 @@ export class AppService {
       return `Error reading file: ${error.message}`;
     }
   }
+
+  getSingleFile(): string {
+    const filePath = '/app/single-file.txt';
+    try {
+      if (fs.existsSync(filePath)) {
+        return fs.readFileSync(filePath, 'utf8');
+      }
+      throw new NotFoundException('Single file bind mount not found.');
+    } catch (error: any) {
+      if (error instanceof NotFoundException) throw error;
+      return `Error reading single file: ${error.message}`;
+    }
+  }
 }
