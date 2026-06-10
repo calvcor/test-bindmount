@@ -9,6 +9,6 @@ services:
       - "3000:3000"
     volumes:
       - /data/test.txt:/app/data/test.txt # Bind mount for a single file
-      - /keys:/app
+      - /keys:/app/keys # Mount keychain data to a subdirectory
     environment:
       - NODE_ENV=production
